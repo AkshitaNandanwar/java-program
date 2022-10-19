@@ -1,0 +1,48 @@
+//JALAN TECHNOLOGIES
+Question 1:
+Write a program that takes as input a sorted array of numbers. The objective is to return the array arranged in an
+alternate order such that max value is followed by min value in a descending fashion, so that the 1st element is the
+max value, 2nd element is the min value, 3rd element is the second max value, 4th element is the second min value &
+so on.
+Example: For an input array [2, 4, 6, 8, 10],
+the expected result would be [10, 2, 8, 4, 6]
+
+Solution:
+
+let arr =  [2, 4, 6, 8, 10]; // given array in question
+let n = arr.length; // length of an main array 
+let output =""; // create empty string variable for print o/p in row
+rearrange(arr,n); //call a function
+console.log("Output ");
+for (let i = 0; i < n; i++)
+        //onsole.log(arr[i] + " ");
+        output = output + arr[i] + " ";
+        console.log(output );
+
+function rearrange(arr, n){
+    let temp = new Array(n); //DECLARE Array  store or to hold modified array
+    let small =0, large = n-1;  // Indexes of smallest and largest elements from remaining array.
+    
+    let CheckLargeORSmallNp = true;   // To indicate whether we need to copy remaining  largest or remaining smallest at next position
+   
+     // Store result in temp[]
+    for(let i=0;i<n;i++){
+        if(CheckLargeORSmallNp){
+            temp[i] = arr[large--];
+        }else{
+            temp[i] =arr[small++];
+        }
+
+        CheckLargeORSmallNp =!CheckLargeORSmallNp;
+
+    }
+ // Copy temp[] to arr[]
+    for(let i=0;i<n;i++){
+        arr[i] =temp[i];
+    }
+
+    
+}
+
+Time Complexity: O(N), Iterating over the array of size N 2 times.
+Space complexity : O(N)
