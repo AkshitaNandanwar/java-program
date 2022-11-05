@@ -1,0 +1,33 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        //Scanner sc = new Scanner(System.in);
+        //int n = sc.nextInt(); //reading the number of elements from the that we want to enter  
+        int target = 10;
+        int arr[] ={45,15,9,6,3,4};
+         int n = arr.length;
+        // int arr[] = new int[n]; //creates an array in the memory of length n  
+        // for(int i=0;i<n;i++){
+        //     //reading array elements from the user   
+        //      arr[i]=sc.nextInt();
+        // }
+        int i;
+        for( i=0;i<n;i++){
+             // int arr[]=sc.nextInt();
+            if(arr[i] == target){
+                System.out.println(arr[i] + " is Present at index " + i);
+                break;
+            } 
+        }
+        if( i == n){
+             System.out.println(target + " is not found try something else");
+        }
+        
+
+        //System.out.println("Hello, World!");
+    }
+}
+
+/* Time Complecity
+Best-case : O(1);
+worse-case:O(n);
